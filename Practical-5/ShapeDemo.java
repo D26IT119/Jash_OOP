@@ -1,0 +1,73 @@
+abstract class Shape {
+    abstract double area();
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double area() {
+        return length * width;
+    }
+}
+
+class Triangle extends Shape {
+    private double base;
+    private double height;
+
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    double area() {
+        return 0.5 * base * height;
+    }
+}
+
+public class ShapeDemo {
+    public static void main(String[] args) {
+
+        Shape[] shapes = {
+            new Circle(7),
+            new Rectangle(6, 2),
+            new Triangle(2, 5),
+            new Circle(3)
+        };
+
+        double total = 0;
+        double largest = 0;
+
+        for (Shape shape : shapes) {
+            double currentArea = shape.area();
+            total += currentArea;
+            System.out.println("Area: " + currentArea + ", Running total: " + total);
+            if (currentArea > largest) {
+                largest = currentArea;
+            }
+        }
+        System.out.println("Total area: " + total);
+        System.out.println("Largest area: " + largest);
+    }
+}
+
