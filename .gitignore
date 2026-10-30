@@ -1,2 +1,7 @@
 *.class
 .DS_Store
+target/
+*.jar
+MiniBank/out/
+run.ps1
+

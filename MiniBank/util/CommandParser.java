@@ -1,4 +1,5 @@
-package bank;
+package util;
+import model.TransactionType;
 
 public class CommandParser {
 
